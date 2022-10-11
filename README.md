@@ -56,11 +56,11 @@ k3d creates containerized k3s clusters. This means, that you can spin up a multi
 You have several options there:
 
 - use the install script to grab the latest release:
-  - wget: `wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash`
-  - curl: `curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash`
+  - wget: `wget -q -O - https://raw.githubusercontent.com/ygouzerh/k3d/main/install.sh | bash`
+  - curl: `curl -s https://raw.githubusercontent.com/ygouzerh/k3d/main/install.sh | bash`
 - use the install script to grab a specific release (via `TAG` environment variable):
-  - wget: `wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=v5.0.0 bash`
-  - curl: `curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | TAG=v5.0.0 bash`
+  - wget: `wget -q -O - https://raw.githubusercontent.com/ygouzerh/k3d/main/install.sh | TAG=v5.0.0 bash`
+  - curl: `curl -s https://raw.githubusercontent.com/ygouzerh/k3d/main/install.sh | TAG=v5.0.0 bash`
 
 - use [Homebrew](https://brew.sh): `brew install k3d` (Homebrew is available for MacOS and Linux)
   - Formula can be found in [homebrew/homebrew-core](https://github.com/Homebrew/homebrew-core/blob/master/Formula/k3d.rb) and is mirrored to [homebrew/linuxbrew-core](https://github.com/Homebrew/linuxbrew-core/blob/master/Formula/k3d.rb)
