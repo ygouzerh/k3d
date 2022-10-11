@@ -54,9 +54,16 @@ func TranslateNodeToContainer(node *k3d.Node) (*NodeInDocker, error) {
 
 	/* initialize everything that we need */
 	containerConfig := docker.Config{}
+	ulimit, _ := dockerunits.ParseUlimit("nofile=65535:65535")
+	var ulimits []*dockerunits.Ulimit
+	ulimits = append(ulimits, ulimit)
 	hostConfig := docker.HostConfig{
 		Init:       &init,
 		ExtraHosts: node.ExtraHosts,
+		// Ulimits              []*units.Ulimit
+		Resources: docker.Resources{
+			Ulimits: ulimits,
+		},
 		// Explicitly require bridge networking. Podman incorrectly uses
 		// slirp4netns when running rootless, therefore for rootless podman to
 		// work, this must be set.
